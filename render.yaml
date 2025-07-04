@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: cypherx-bot
+    env: node
+    plan: free
+    repo: https://github.com/codes254/CypherX
+    branch: main
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: BOT_TOKEN
+        sync: false  # Set this manually in Render's dashboard
+      - key: NODE_ENV
+        value: production
